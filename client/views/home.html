@@ -1,0 +1,80 @@
+<div class="header">
+  <div ng-include="'views/header.html'"></div>
+</div>
+<div class="container">
+  <div ng-controller="mainCtrl">
+    <div class="max-width">
+      <div class="project-states">
+        <div class="state-all" ng-click="init()">
+          <a>全部({{allCount}})</a>
+        </div>
+        <div class="state-upload" ng-click="init('待上传')">
+          <a>待上传({{uploadCount}})</a>
+        </div>
+        <div class="state-untreated" ng-click="init('待处理')">
+          <a>待处理({{treatCount}})</a>
+        </div>
+        <div class="state-treating" ng-click="init('正在处理')">
+          <a>正在处理({{treatingCount}})</a>
+        </div>
+        <div class="state-treated" ng-click="init('已完成')">
+          <a>已完成({{completeCount}})</a>
+        </div>
+        <div class="add-project">
+          <a ng-click="openAside()"><span class="icon-plus" style="margin-right: 2px;"></span>新建项目</a>
+        </div>
+      </div>
+      <div class="project-list" infinite-scroll='reddit.nextPage()' infinite-scroll-disabled='reddit.busy' infinite-scroll-distance='1'>
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th style="width: 25%;">项目名称</th>
+              <th style="width: 25%;">状态</th>
+              <th style="width: 25%;">创建日期</th>
+              <th style="width: 25%;">最后修改日期</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr ng-repeat="item in reddit.items" ui-sref="project({projectId:item.id})">
+              <td class="first-node"><a>{{item.projectName}}</a></td>
+              <td>{{item.status}}</td>
+              <td>{{item.createTime}}</td>
+              <td>{{item.lastUpdated}}</td>
+            </tr>
+            <tr ng-show='reddit.busy'>
+              <td colspan="4" class="form-noData">正在加载...</td>
+            </tr>
+            <tr ng-show="reddit.items.length == 0">
+              <td colspan="4" class="form-noData">暂无数据</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+<script type="text/ng-template" id="asideContent.html">
+  <div class="max-width">
+    <div class="modal-header">
+      <h4 class="modal-title">新建项目</h4>
+    </div>
+    <div class="modal-body">
+      <form role="form" class="col-sm-8">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="项目名称" ng-model="project.projectName">
+        </div>
+        <div class="form-group">
+          <textarea placeholder="项目描述" class="form-control" ng-model="project.description"></textarea>
+        </div>
+      </form>
+      <div class="clear"></div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-primary" ng-click="ok($event)">确定</button>
+      <button class="btn btn-primary" ng-click="cancel($event)">取消</button>
+    </div>
+  </div>
+</script>
+<div class="footer max-width">
+  <p><span class="glyphicon glyphicon-heart"></span> 武汉地大信息工程股份有限公司</p>
+</div>

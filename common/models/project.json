@@ -1,0 +1,67 @@
+{
+  "name": "project",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "projectName": {
+      "type": "string",
+      "comments": "项目名称"
+    },
+    "description": {
+      "type": "string",
+      "comments": "项目描述"
+    },
+    "createTime": {
+      "type": "date",
+      "comments": "项目创建时间"
+    },
+    "lastUpdated":{
+      "type": "date",
+      "comments": "项目最后修改时间"
+    },
+    "uploadTime": {
+      "type": "date",
+      "comments": "无人机数据上传时间"
+    },
+    "startTime": {
+      "type": "date",
+      "comments": "无人机数据开始处理时间"
+    },
+    "endTime": {
+      "type": "date",
+      "comments": "无人机数据处理结束时间"
+    },
+    "status": {
+      "type": "string",
+      "comments": "当前处理进度：待上传、待处理、正在处理、处理完成"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {
+    "updateState": {
+      "isStatic": true,
+      "accepts": [
+        {
+          "arg": "projectId",
+          "type": "string",
+          "http": {
+            "source": "query"
+          }
+        }
+      ],
+      "returns": {
+        "arg": "data",
+        "type": "object"
+      },
+      "http": {
+        "verb": "get"
+      }
+    }
+  }
+}
