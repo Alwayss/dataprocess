@@ -1,0 +1,51 @@
+{
+  "name": "message",
+  "base": "PersistedModel",
+  "strict": false,
+  "idInjection": false,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "toUser": {
+      "type": "string",
+      "comments": "消息接收者"
+    },
+    "projectId": {
+      "type": "string",
+      "comments": "项目id"
+    },
+    "completeTime": {
+      "type": "date",
+      "comments": "处理完成时间"
+    },
+    "projectName": {
+      "type": "string",
+      "comments": "项目名称"
+    },
+    "result": {
+      "type": "string",
+      "comments": "处理结果"
+    },
+    "createTime": {
+      "type": "date",
+      "comments": "消息创建时间"
+    },
+    "status": {
+      "type": "boolean",
+      "comments": "消息读取状态"
+    },
+    "fileUrl":{
+      "type": "string",
+      "comments": "文件地址"
+    },
+    "projectId":{
+      "type": "string",
+      "comments": "项目id"
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

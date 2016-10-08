@@ -1,0 +1,441 @@
+.browsehappy {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+html,body{
+    font-family: "Microsoft YaHei" !important;
+}
+* {
+    padding: 0;
+    margin: 0;
+}
+a{
+    text-decoration: none;
+}
+.height100{
+    height: 100%;
+}
+.container {
+    width: 100%;
+    padding: 0 !important;
+}
+
+.max-width {
+    max-width: 1024px;
+    margin: auto;
+}
+
+/* Custom page header */
+.header {
+    border-bottom: 1px solid #e5e5e5;
+    margin-bottom: 10px;
+    height: 70px;
+}
+/* Custom page footer */
+.footer {
+    margin-top: 20px;
+    padding-top: 19px;
+    color: #777;
+    border-top: 1px solid #e5e5e5;
+}
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    /* Remove the padding we set earlier */
+    .header,
+    .footer {
+        padding-left: 0;
+        padding-right: 0;
+    }
+    /* Space out the masthead */
+    .header {
+        margin-bottom: 30px;
+        height: 70px;
+    }
+}
+
+/*admin.html*/
+.main-body {
+    height: 500px;
+    padding-left: 10px;
+    padding-top: 12px;
+}
+
+.user-count, .project-count, .current-project-state {
+    height: 220px;
+    border-radius: 2px;
+    display: inline-block;
+    padding: 0;
+    margin-left: 1%;
+    position: relative;
+}
+.user-count{
+    background: #425f9b;
+}
+.project-count{
+    background: #795cb3;
+}
+.current-project-state{
+    background: #3890d0;
+}
+.user-count, .project-count {
+    width: 28%;
+}
+.current-project-state {
+    width: 38%
+}
+.description-area{
+    position: absolute;
+    bottom:10px;
+    left: 16px;
+    width: 100%;
+}
+.description-area .p1{
+    color: #e9f3ff;
+    font-size: 24px;
+}
+.description-area .p2{
+    color: #e9f3ff;
+    font-size: 16px;
+}
+.description-area .arrow{
+    position: absolute;
+    right: 32px;
+    font-size: 36px;
+    color: #fff;
+}
+.user-count span, .project-count span, .current-project-state span{
+    font-size: 68px;
+    position: absolute;
+    top: 30px;
+    right: 38px;
+}
+.user{
+    color: #f0f6ff;
+}
+.project{
+    color: #efc222;
+}
+.uav{
+    color: #e3f3f9;
+}
+/*header.html*/
+.app-header {
+    background: #2b2b2b;
+    height: 70px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.header-left{
+    float: left;
+    color: #fff;
+    margin-left: 20px;
+}
+.header-left a{
+    color: #fff;
+    margin-top: 14px;
+    display: block;
+}
+.header-left .logo{
+    font-size: 36px;
+    margin-right: 10px;
+}
+.header-left .title{
+    font-size: 20px;
+    vertical-align: top;
+    margin-top: 5px;
+    display: inline-block;
+    font-weight: 800;
+}
+.header-middle{
+    float: left;
+    margin-left: 60px;
+    margin-top: 20px;
+}
+.header-middle ul li{
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 20px;
+}
+.header-middle ul li span{
+    font-size: 20px;
+    vertical-align: middle;
+    cursor: pointer;
+}
+.header-middle ul li span a{
+    color: #9c9c9c;
+    font-size: 15px !important;
+}
+.header-right{
+    float: right;
+    line-height: 70px;
+    margin-right: 30px;
+}
+.header-right .dropdown-menu{
+    left: -130px !important;
+    top:76%;
+}
+.admin-exit{
+    cursor: pointer;
+}
+.user-info{
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    margin-top: -2px;
+    display: inline-block;
+}
+.user-info.search{
+    font-size: 22px;
+    margin-right: 50px;
+    vertical-align: sub;
+}
+.dropdown-menu .form-group input{
+    width:300px;
+}
+.exit{
+    font-size: 20px;
+    vertical-align: sub;
+    margin-right: 4px;
+}
+.header-right a{
+    cursor: pointer;
+    text-decoration: none;
+}
+.header-right a span{
+    color: #e9f3ff;
+}
+.btn-group > .popover.bottom > .arrow{
+    display: none;
+}
+.PopoverTemplateInput{
+    font-family: "Microsoft YaHei" !important;
+    width: 260px;
+    margin-top: 14px;  
+}
+.btn-group > .popover{
+    max-width: 290px !important;
+}
+/* home.html */
+.project-states{
+    width: 100%;
+    height: 60px;
+}
+.project-states div{
+    width: 76px;
+    height: 36px;
+    display: inline-block;
+    margin-right: 12px;
+    border-radius: 2px;
+}
+.project-states div a{
+    display: block;
+    width:100%;
+    height:100%;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+    line-height: 36px;
+    text-align: center;
+}
+.state-all{
+    background: #ad9465;
+}
+.state-upload{
+    background: #a0ba3a;
+}
+.state-untreated{
+    background: #38b749;
+}
+.state-treating{
+    background: #0fab9d;
+}
+.state-treated{
+    background: #f6951d;
+}
+.add-project{
+    background: #397dd1;
+    float: right;
+}
+.project-list{
+    margin-top:20px;
+}
+.project-list table tbody tr td{
+    padding:16px 0;
+}
+.first-node{
+    padding-left: 6px !important;
+}
+.project-list table tbody tr:last-child{
+    border-bottom: 1px solid #dadada;
+}
+.project-list table tbody tr:hover{
+    cursor: pointer;
+}
+.add-project-content{
+    background: #e6e6e6;
+    width: 100%;
+    height: 300px;
+    position: fixed;
+    bottom: -302px;
+    box-shadow: 1px 1px 10px #000;
+}
+@-webkit-keyframes fadeInUp {
+    0% {
+        bottom: -302px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+@keyframes fadeInUp {
+    0% {
+        bottom: -302px;
+    }
+    100% {
+        bottom: 0;
+    }
+}
+@-webkit-keyframes fadeInDown {
+    0% {
+        bottom: 0px;
+    }
+    100% {
+        bottom: -302px;
+    }
+}
+@keyframes fadeInDown {
+    0% {
+        bottom: 0px;
+    }
+    100% {
+        bottom: -302px;
+    }
+}
+.fadeInUp {
+    -webkit-animation: fadeInUp 0.5s ease;
+    animation: fadeInUp 0.5s ease;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+.fadeInDown {
+    -webkit-animation: fadeInDown 0.5s ease;
+    animation: fadeInDown 0.5s ease;
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+#sideContent p{
+    font-size: 16px;
+    margin: 20px 0 10px 0;
+    color: #525252;
+}
+#sideContent textarea{
+    overflow: hidden;
+    word-wrap: break-word;
+    resize: horizontal;
+    height: 100px;
+}
+.project-close{
+    font-size: 30px;
+    float: right;
+    margin-top: 10px;
+    cursor: pointer;
+}
+.form-noData{
+    text-align: center;
+    font-size: 18px;
+}
+/* login.html */
+.login-content{
+    background: #dfeff5;
+    padding-top: 70px;
+}
+.login-form{
+    height: 250px;
+    width: 350px;
+    background: #fff;
+    margin: 120px auto 0;
+    border: 1px solid #d9dcde;
+}
+.login-form form{
+    display: block;
+    width: 280px;
+    margin: 60px auto 0;
+}
+.login-form form button{
+    background: #3890d0 !important;
+}
+.login-form form i{
+    color:#3890d0 !important;
+}
+/* admin-users.html */
+.user-operate{
+    float: right;
+}
+.actived{
+    color: green;
+}
+.banned{
+    color: #cacaca;
+}
+/* project.html */
+.project-detail-back{
+    cursor: pointer;
+}
+.project-detail-back .back{
+    font-size: 30px;
+}
+.project-detail-back span{
+    color: #fff;
+    font-size: 22px;
+    vertical-align: sub;
+}
+.back-text{
+    vertical-align: super;
+    font-size: 15px;
+    margin-left: -4px;
+}
+.underline{
+    width:100%;
+    height: 2px;
+    background: #e4e4e4;
+    margin-top: 10px;
+}
+.project-detail{
+    overflow: hidden;
+    margin-top: 40px;
+}
+.project-text{
+    display: block;
+    width: 100%;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 1.42857143;
+}
+.project-state{
+    overflow: hidden;
+    margin-top: 60px;
+}
+.project-state div{
+    display: inline-block;
+}
+.sweet-alert.showSweetAlert h2,.sweet-alert.showSweetAlert fieldset{
+    display: none !important;
+}
+.sweet-alert.showSweetAlert p{
+    font-size: 20px;
+    font-family: "Microsoft YaHei";
+}
+.clear{
+    clear: both;
+}
+.project-data{
+    margin-right: 6px;
+    font-size: 18px;
+    vertical-align: sub;
+}

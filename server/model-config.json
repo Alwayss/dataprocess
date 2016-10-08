@@ -1,0 +1,57 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "User": {
+    "dataSource": "mongoDs"
+  },
+  "AccessToken": {
+    "dataSource": "mongoDs",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "mongoDs",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "mongoDs",
+    "public": true
+  },
+  "Role": {
+    "dataSource": "mongoDs",
+    "public": false
+  },
+  "account": {
+    "dataSource": "mongoDs",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "project": {
+    "dataSource": "mongoDs",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "message": {
+    "dataSource": "mongoDs",
+    "public": true,
+    "$promise": {},
+    "$resolved": true
+  },
+  "container": {
+    "dataSource": "storage",
+    "public": true
+  }
+}
