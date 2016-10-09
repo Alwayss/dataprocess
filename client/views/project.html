@@ -42,7 +42,7 @@
           <span class="icon-cloud-upload project-data"></span>上传</button>
       </div>
       <form name="Form" id="form" class="col-sm-8">
-        <div id="wizard" class="swMain">
+        <div id="wizard" class="swMain" style="width:100%">
           <ul>
             <li>
               <a href ng-class="{'selected' : currentStep >= 1, 'done' : currentStep > 1}">
@@ -70,7 +70,10 @@
             </li>
             <li>
               <a href ng-class="{'selected' : currentStep >= 4, 'done' : currentStep > 4}">
-                <div class="stepNumber">
+                <div class="stepNumber" ng-class="{'isVisibility' : project.status == '处理错误'}">
+                  4
+                </div>
+                <div class="failStepNumber" ng-class="{'isVisibility' : project.status != '处理错误'}">
                   4
                 </div>
                 <span class="stepDesc text-small" ng-show="project.status != '处理错误'"> 已完成 </span>

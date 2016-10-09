@@ -12,14 +12,17 @@ angular.module('uavDataprocessFrontApp')
 			.state('admin.index',{
 				url:'/index',
 				templateUrl:'views/admin-index.html',
+				authenticate: true
 			})
 			.state('admin.users',{
 				url:'/users',
 				templateUrl:'views/admin-users.html',
+				authenticate: true
 			})
 			.state('home',{
 				url:'/home',
-				templateUrl:'views/home.html'
+				templateUrl:'views/home.html',
+				authenticate: true
 			})
 			.state('login',{
 				url:'/login',
@@ -27,6 +30,7 @@ angular.module('uavDataprocessFrontApp')
 			})
 			.state('project',{
 				url:'/project/:projectId',
-				templateUrl:'views/project.html'
+				templateUrl:'views/project.html',
+				authenticate: true
 			})
 	});

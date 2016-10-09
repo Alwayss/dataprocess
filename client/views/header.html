@@ -1,7 +1,7 @@
 <div class="app-header" ng-controller="headerCtrl">
   <div class="max-width">
     <div class="header-left">
-      <a href="#">
+      <a>
         <span class="icon-logo logo"></span>
         <span class="title">无人机数据处理云</span>
       </a>
@@ -24,16 +24,6 @@
         <span>退出</span>
       </div>
       <div ng-show="!isAdmin">
-        <!-- <div class="btn-group" uib-dropdown>
-          <span class="icon-search user-info search" uib-dropdown-toggle></span>
-          <ul class="dropdown-menu" uib-dropdown-menu role="menu" aria-labelledby="btn-append-to-single-button">
-            <li role="menuitem">
-              <div class="form-group" style="padding: 20px 20px 5px 20px;">
-                <input type="text" class="form-control" placeholder="输入项目名称">
-              </div>
-            </li>
-          </ul>
-        </div> -->
         <div class="btn-group">
           <span class="icon-search user-info search" uib-popover-template="dynamicPopover.templateUrl" popover-placement="{{dynamicPopover.placement}}" 
           popover-trigger="'outsideClick'""></span>

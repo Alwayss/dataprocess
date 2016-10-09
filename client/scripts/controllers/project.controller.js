@@ -49,7 +49,7 @@ angular.module('uavDataprocessFrontApp')
 				var newName = guid + '.' + file.name.split('.')[1];
 				Upload.rename(file,newName);
 				Upload.upload({
-					url: 'http://192.168.1.84:3000/api/containers/'+ guid +'/upload?id=' + guid + '&filename=' + newName,
+					url: '/api/containers/'+ guid +'/upload?id=' + guid + '&filename=' + newName,
 					data: {file: file}
 				}).then(function (resp) {
 					console.log('Success ' + resp.config.data.file.name + 'uploaded. Response: ' + resp.data);
@@ -78,7 +78,7 @@ angular.module('uavDataprocessFrontApp')
 		};
 
 		$scope.downloadFile=function(id){
-			$window.open('http://192.168.1.84:3000/api/containers/'+id+'/download/'+id+'.jpg');
+			$window.open('/api/containers/'+id+'/download/'+id+'.zip');
 		};
 
 		$scope.goBack = function(){

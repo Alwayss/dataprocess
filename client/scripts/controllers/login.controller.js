@@ -9,8 +9,7 @@ angular.module('uavDataprocessFrontApp')
 				if(data.user.status == true){
 					$localStorage.userId = data['userId'];
 					$localStorage.token = data['id'];
-					//查询该用户的角色信息
-					RoleMapping.find({
+					RoleMapping.find({                             //查询该用户的角色信息
 						filter:{
 							include:'role',
 							where:{ principalId: data['userId'] }
@@ -28,7 +27,7 @@ angular.module('uavDataprocessFrontApp')
 					SweetAlert.swal("", "您未开启权限，请联系管理员","warning");
 				}
 			},function(err){
-				alert(JSON.stringify(err));
+				SweetAlert.swal("", "网络错误","warning");
 			})
 		}
 	});

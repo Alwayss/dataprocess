@@ -16,7 +16,7 @@ angular.module('uavDataprocessFrontApp')
 				});
 				$scope.users = data;
 			},function(err){
-				alert(JSON.stringify(err));
+				SweetAlert.swal("", "网络错误", "warning");
 			})
 		}
 		init();
@@ -43,9 +43,9 @@ angular.module('uavDataprocessFrontApp')
 			modalInstance.result.then(function(user){
 				Account.create(user,function(data){
 					init();
-					SweetAlert.swal("", "添加成功","success");
+					SweetAlert.swal("", "添加成功", "success");
 				},function(err){
-					alert(JSON.stringify(err));
+					SweetAlert.swal("", "网络错误", "warning");
 				})
 			});
 		}

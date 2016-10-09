@@ -1,11 +1,12 @@
 angular.module('uavDataprocessFrontApp')
   .factory('Reddit', function(Project,$timeout) {
-    var Reddit = function(type,count) {
+    var Reddit = function(type,count,accountId) {
       this.items = [];
       this.busy = false;
       this.pageIndex = 1;
       this.type = type;
       this.count = count;
+      this.accountId = accountId;
     };
 
     Reddit.prototype.nextPage = function() {
@@ -13,9 +14,9 @@ angular.module('uavDataprocessFrontApp')
       this.busy = true;
       var temp = {};
       if(this.type == '' || this.type== undefined || this.type==null){
-        temp = {};
+        temp = { accountId: this.accountId};
       }else{
-        temp = { status: this.type };
+        temp = { accountId: this.accountId, status: this.type };
       }
       var list=[];
       if(this.items.length < this.count){
@@ -37,6 +38,5 @@ angular.module('uavDataprocessFrontApp')
         this.busy = false;
       }
     };
-
     return Reddit;
   });

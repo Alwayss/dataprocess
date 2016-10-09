@@ -6,12 +6,13 @@ angular.module('uavDataprocessFrontApp')
 		$scope.logout=function(){
 			delete $localStorage.token;
 			delete $localStorage.userId;
+			delete $localStorage.role;
 			Account.logout({
 				access_token:$localStorage.token
 			},function(data){
 				$state.go('login');
 			},function(err){
-				alert(JSON.stringify(err));
+				SweetAlert.swal("", JSON.stringify(err),"warning");
 			})
 		};
 		$scope.dynamicPopover = {
@@ -19,11 +20,10 @@ angular.module('uavDataprocessFrontApp')
 		    placement:'bottom',
 		    text: ''
 		};
-		//$scope.PopoverisOpen = false;
 		$scope.mykey=function(event){
 			if(event.keyCode == 13){
 				Project.find({
-					filter:{"where":{"projectName":{"like":$scope.dynamicPopover.text}}}
+					filter:{"where":{"projectName":{"like":$scope.dynamicPopover.text},"accountId":$localStorage.userId}}
 				},function(data){
 					$scope.dynamicPopover.text='';
 					$scope.$emit('searchProject',{ data:data});

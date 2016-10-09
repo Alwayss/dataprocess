@@ -408,4 +408,41 @@
   margin-right: 7px;
   text-indent: 0;
 }
-
+.swMain > ul .failStepNumber {
+    background-color: #ffffff;
+    border: 5px solid #c8c7cc;
+    border-radius: 100% 100% 100% 100%;
+    color: #546474;
+    display: inline-block;
+    font-size: 15px;
+    height: 40px;
+    line-height: 30px;
+    position: relative;
+    text-align: center;
+    width: 40px;
+    z-index: 2;
+}
+.swMain > ul li > a.selected:before, .swMain li > a.done:before {
+    border-color: #007AFF;
+}
+.swMain ul li > a.done .failStepNumber, .swMain > ul li:last-child > a.selected .failStepNumber {
+    border-color: #007AFF;
+    background-color: #007AFF;
+    color: #fff;
+    text-indent: -9999px;
+}
+.swMain ul li > a.done .failStepNumber:before, .swMain > ul li:last-child > a.selected .failStepNumber:before {
+  content: "\e014";
+  display: inline;
+  float: right;
+  font-family: 'Glyphicons Halflings';
+  font-weight: 300;
+  height: auto;
+  text-shadow: none;
+  margin-right: 7px;
+  text-indent: 0;
+}
+.isVisibility{
+  visibility: hidden;
+  display: none !important;
+}
