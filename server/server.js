@@ -4,28 +4,28 @@ var amqp = require('amqplib/callback_api');
 var util = require('util');
 var app = module.exports = loopback();
 
-// app.use('/api/containers',function(req,res,next){
-// 	if(req.query.id){
-// 		var message = {
-// 			Guid:req.query.id,
-// 			Url:"D:/nodejs/uav-dataprocess/server/storage/data/"+req.query.filename
-// 		};
-// 		res.once('finish',function(){
-// 			amqp.connect('amqp://localhost', function(err, conn) {
-// 				conn.createChannel(function(err, ch) {
-// 					var q = 'infoearth';
-// 					ch.assertQueue(q, {durable: true});
-// 					ch.sendToQueue(q, new Buffer(util.inspect(message)), {persistent: true});
-// 				});
-// 			});
-// 			var project=app.models.project;
-// 			project.updateAll({id:req.query.id},{status:"待处理"},function(err,pro){
-// 				if(err) console.log(err);
-// 			})
-// 		});
-// 	}
-// 	next();
-// });
+app.use('/api/containers',function(req,res,next){
+	if(req.query.id){
+		var message = {
+			Guid:req.query.id,
+			Url:"D:/nodejs/uav-dataprocess/server/storage/data/"+req.query.filename
+		};
+		res.once('finish',function(){
+			amqp.connect('amqp://guest:guest@192.168.0.104', function(err, conn) {
+				conn.createChannel(function(err, ch) {
+					var q = 'infoearth';
+					ch.assertQueue(q, {durable: true});
+					ch.sendToQueue(q, new Buffer(util.inspect(message)), {persistent: true});
+				});
+			});
+			var project=app.models.project;
+			project.updateAll({id:req.query.id},{status:"待处理",lastUpdated:new Date()},function(err,pro){
+				if(err) console.log(err);
+			})
+		});
+	}
+	next();
+});
 
 
 app.start = function(){

@@ -21,7 +21,7 @@ module.exports = function(Project) {
 		}else{
 			str = "处理错误";
 		}
-		project.updateAll({id:projectId},{status:str},function(err){
+		project.updateAll({id:projectId},{status:str,lastUpdated:new Date()},function(err){
 			if(err) console.log(err);
 			cb(null,{code:200,msg:'success'});
 		})
